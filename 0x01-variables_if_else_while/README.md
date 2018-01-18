@@ -9,3 +9,4 @@
 * 7-print_tebahpla.c: print alphabet in reverse
 * 8-print_base16.c: program that prints all the numbers of base 16 in lowercase
 * 9-print_comb.c: print combos of single digit numbers
+* 10-print_comb2.c: program that prints the numbers from 00 to 99
