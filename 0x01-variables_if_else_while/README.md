@@ -7,3 +7,4 @@
 * 5-print_numbers.c: print single digit numbers
 * 6-print_numberz.c: print single digit numbers (restrictive)
 * 7-print_tebahpla.c: print alphabet in reverse
+* 8-print_base16.c: program that prints all the numbers of base 16 in lowercase
