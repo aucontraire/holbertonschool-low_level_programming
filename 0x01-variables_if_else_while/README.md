@@ -6,3 +6,4 @@
 * 3-print_alphabets.c: program that prints lower and uppercase alphabet
 * 5-print_numbers.c: print single digit numbers
 * 6-print_numberz.c: print single digit numbers (restrictive)
+* 7-print_tebahpla.c: print alphabet in reverse
