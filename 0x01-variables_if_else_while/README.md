@@ -11,3 +11,4 @@
 * 9-print_comb.c: print combos of single digit numbers
 * 10-print_comb2.c: program that prints the numbers from 00 to 99
 * 100-print_comb3.c: program that prints double digit combos
+* 101-print_comb4.c: program that prints triple digit combos
