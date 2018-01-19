@@ -13,10 +13,6 @@ int main(void)
 	int i, j, k, m;
 
 	i = 48;
-	j = 48;
-	k = 48;
-	m = 49;
-
 	while (i < 58)
 	{
 		j = 48;
@@ -43,14 +39,10 @@ int main(void)
 				m = 48;
 				k++;
 			}
-
 			j++;
 		}
-
 		i++;
 	}
-
 	putchar(10);
-
 	return (0);
 }
