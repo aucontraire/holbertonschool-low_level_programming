@@ -10,11 +10,11 @@
 
 void times_table(void)
 {
-	int row, column, product, tens, ones = 0;
+	int row, column, product, tens, ones;
 
-	while (row <= 9)
+	for (row = 0; row <= 9; row++)
 	{
-		while (column <= 9)
+		for (column = 0; column <= 9; column++)
 		{
 			product = row * column;
 			tens = product / 10;
@@ -38,10 +38,7 @@ void times_table(void)
 				_putchar(tens + '0');
 				_putchar(ones + '0');
 			}
-			column++;
 		}
-		column = 0;
 		_putchar('\n');
-		row++;
 	}
 }
