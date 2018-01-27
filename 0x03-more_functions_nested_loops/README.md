@@ -11,3 +11,4 @@
 * 9-fizz_buzz.c: “Fizz-Buzz test” is an interview question
 * 10-print_triangle.c: function that prints a triangle
 * 100-prime_factor.c: prints the largest prime factor of the number 612852475143
+* 101-print_number.c: function that prints an integer
