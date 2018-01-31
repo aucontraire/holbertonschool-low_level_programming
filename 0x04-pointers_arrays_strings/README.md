@@ -5,3 +5,4 @@
 * 3-puts.c: function that prints a string
 * 4-print_rev.c: function that prints a string, in reverse
 * 5-rev_string.c: function that reverses a string
+* 6-puts2.c: function that prints one char out of 2 of a string
