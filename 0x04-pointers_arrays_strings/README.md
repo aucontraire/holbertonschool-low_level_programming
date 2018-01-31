@@ -7,3 +7,4 @@
 * 5-rev_string.c: function that reverses a string
 * 6-puts2.c: function that prints one char out of 2 of a string
 * 7-puts_half.c: function that prints half of a string
+* 8-print_array.c: function that prints n elements of an array of integers
