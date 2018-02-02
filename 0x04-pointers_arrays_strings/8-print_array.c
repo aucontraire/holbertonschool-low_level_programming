@@ -15,7 +15,7 @@ void print_array(int *a, int n)
 	i = 0;
 	count = 1;
 	if (n < 0)
-		n = n * -1;
+		n = 0;
 	if (n > 0)
 	{
 		while (a[i] != '\0' && count < n)
