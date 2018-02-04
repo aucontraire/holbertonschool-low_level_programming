@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * reverse_array - reverses array
@@ -11,11 +12,10 @@ void reverse_array(int *a, int n)
 {
 	int half = n / 2;
 	int left, right, i;
-	int stand = sizeof(a) / sizeof(int);
 
-	n = stand - 1;
+	n -= 1;
 
-	for (i = 0; i < half + 1; i++)
+	for (i = 0; i < half; i++)
 	{
 		left = a[n - i];
 		right = a[i];
