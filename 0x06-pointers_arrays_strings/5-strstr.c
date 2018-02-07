@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _strspn - gets the length of a prefix substring
+ * _strstr - locates a substring
  * @haystack: string to search through
  * @needle: string to match
  * Return: pointer to initial segment of haystack
@@ -11,6 +11,7 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i, j, start;
 	int nlen = 0;
+
 	i = 0;
 	j = 0;
 	start = 0;
