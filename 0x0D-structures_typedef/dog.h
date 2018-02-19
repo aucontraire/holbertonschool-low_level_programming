@@ -7,11 +7,11 @@ int _putchar(char c);
  * @age: doggo's age
  * @owner: owner's name
  */
-typedef struct dog
+struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-} d;
+};
 void init_dog(struct dog *d, char *name, float age, char *owner);
 #endif /* !DOG_H */
