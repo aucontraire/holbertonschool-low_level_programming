@@ -32,6 +32,7 @@ char *_strdup(char *str)
 	{
 		arr[i] = str[i];
 	}
+	arr[i] = '\0';
 
 	return (arr);
 }
@@ -67,7 +68,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(doggo);
 		return (NULL);
 	}
-
+	printf("doggo_name: %s\n", doggo_name);
+	printf("doggo_owner: %s\n", doggo_owner);
 	doggo->name = doggo_name;
 	doggo->age = age;
 	doggo->owner = doggo_owner;
