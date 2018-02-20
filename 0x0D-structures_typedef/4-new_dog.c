@@ -3,6 +3,40 @@
 #include <stdlib.h>
 
 /**
+ * _strdup - returns a pointer to a newly allocated space in memory
+ * @str: string
+ * Return: pointer to newly allocated space in memory
+ */
+
+char *_strdup(char *str)
+{
+	int length, i;
+	char *arr;
+
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
+	length = 0;
+	while (*(str + length) != '\0')
+	{
+		length++;
+	}
+
+	arr = (char*) malloc(length * sizeof(char) + 1);
+	if (arr == NULL)
+		return (NULL);
+
+	for (i = 0; i < length; i++)
+	{
+		arr[i] = str[i];
+	}
+
+	return (arr);
+}
+
+/**
  * new_dog - creates a new dog
  * @name: doggo's name
  * @age: doggo's age
@@ -13,12 +47,31 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *doggo;
+	char *doggo_name, *doggo_owner;
 
 	doggo = malloc(sizeof(dog_t));
 	if (doggo == NULL)
 		return (NULL);
-	doggo->name = name;
+
+	doggo_name = _strdup(name);
+	if (doggo_name == NULL)
+	{
+		free(name);
+		free(doggo);
+		return (NULL);
+	}
+
+	doggo_owner = _strdup(owner);
+	if (doggo_owner == NULL)
+	{
+		free(name);
+		free(owner);
+		free(doggo);
+		return (NULL);
+	}
+
+	doggo->name = doggo_name;
 	doggo->age = age;
-	doggo->owner = owner;
+	doggo->owner = doggo_owner;
 	return (doggo);
 }
