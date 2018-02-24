@@ -63,11 +63,11 @@ void print_all(const char * const format, ...)
 	char *sep;
 
 	op_t ops[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string},
-		{NULL, NULL}
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string},
+		{'\0', NULL}
 	};
 
 	va_start(args, format);
@@ -75,9 +75,9 @@ void print_all(const char * const format, ...)
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-		while (ops[j].c != NULL)
+		while (ops[j].c != '\0') 
 		{
-			if (*ops[j].c == format[i])
+			if (ops[j].c == format[i])
 			{
 				if (i == 0)
 					sep = "";
