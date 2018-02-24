@@ -15,7 +15,7 @@ void print_strings(const char *separator, const unsigned int n, ...);
 
 typedef struct op
 {
-	char *c;
+	char c;
 	void (*f)(char *sep, va_list args);
 } op_t;
 
