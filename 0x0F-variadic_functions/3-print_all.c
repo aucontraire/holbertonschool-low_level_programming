@@ -62,6 +62,9 @@ void print_all(const char * const format, ...)
 	int i, j;
 	char *sep;
 
+	if (format == NULL)
+		return;
+
 	op_t ops[] = {
 		{"c", print_char},
 		{"i", print_int},
