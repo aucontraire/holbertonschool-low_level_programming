@@ -5,50 +5,49 @@
 
 /**
  * print_char - print char
- * @sep: separator
  * @args: list of arguments
  */
 
-void print_char(char *sep, va_list args)
+void print_char(va_list args)
 {
-	printf("%s", sep);
 	printf("%c", va_arg(args, int));
 }
 
 /**
  * print_int - print int
- * @sep: separator
  * @args: list of arguments
  */
 
-void print_int(char *sep, va_list args)
+void print_int(va_list args)
 {
-	printf("%s", sep);
 	printf("%d", va_arg(args, int));
 }
 
 /**
  * print_float - print float
- * @sep: separator
  * @args: list of arguments
  */
 
-void print_float(char *sep, va_list args)
+void print_float(va_list args)
 {
-	printf("%s", sep);
 	printf("%f", va_arg(args, double));
 }
 
 /**
  * print_string - print string
- * @sep: separator
  * @args: list of arguments
  */
 
-void print_string(char *sep, va_list args)
+void print_string(va_list args)
 {
-	printf("%s", sep);
-	printf("%s", va_arg(args, char *));
+	char *s = va_arg(args, char *);
+
+	if (s == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
 }
 
 /**
@@ -60,7 +59,8 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	int i, j;
-	char *sep;
+	char *s1 = "";
+	char *s2 = ", ";
 
 	op_t ops[] = {
 		{'c', print_char},
@@ -79,11 +79,9 @@ void print_all(const char * const format, ...)
 		{
 			if (ops[j].c == format[i])
 			{
-				if (i == 0)
-					sep = "";
-				else
-					sep = ", ";
-				ops[j].f(sep, args);
+				printf("%s", s1);
+				ops[j].f(args);
+				s1 = s2;
 			}
 			j++;
 		}
