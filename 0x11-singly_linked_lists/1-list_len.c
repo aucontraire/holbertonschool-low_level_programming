@@ -2,7 +2,7 @@
 
 /**
  * list_len - returns the number of elements in a linked list_t list
- * @list_t: linked list
+ * @h: head of linked list
  * Return: number of elements
  */
 
