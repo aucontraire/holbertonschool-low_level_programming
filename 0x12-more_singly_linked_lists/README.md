@@ -11,3 +11,4 @@
 * 9-insert_nodeint.c: function that inserts a new node at a given position
 * 10-delete_nodeint.c: function that deletes the node at index index of a listint_t linked list
 * 100-reverse_listint.c: function that reverses a listint_t linked list
+* 103-find_loop.c: function that finds the loop in a linked list
