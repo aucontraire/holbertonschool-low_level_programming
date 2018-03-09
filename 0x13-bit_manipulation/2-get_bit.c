@@ -14,6 +14,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int i;
 	unsigned long int x;
 
+	if (index >= (sizeof(n) * 8))
+		return (-1);
 	on = 0;
 	for (i = 63; i != UINT_MAX; i--)
 	{
