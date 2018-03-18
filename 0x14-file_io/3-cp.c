@@ -45,22 +45,21 @@ int main(int argc, char *argv[])
 	if (fd_s == -1)
 		error_handler(98, "Error: Can't read from file %s\n", 's', argv[1]);
 
-	bytes_read = read(fd_s, buffer, 1024);
-	if (bytes_read == -1)
-		error_handler(98, "Error: Can't read from file %s\n", 's', argv[1]);
-
-	if (close(fd_s) == -1)
-		error_handler(100, "Error: Can't close fd %d\n", 'd', fd_s);
-
 	fd_d = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
 	if (fd_d == -1)
 		error_handler(99, "Error: Can't write to %s\n", 's', argv[2]);
 
-	bytes_written = write(fd_d, buffer, bytes_read);
-	if (bytes_written == -1)
-		return (-1);
+	while ((bytes_read = read(fd_s, buffer, 1024)) > 0)
+	{
+		bytes_written = write(fd_d, buffer, bytes_read);
+		if (bytes_written == -1)
+			error_handler(99, "Error: Can't write to %s\n", 's', argv[2]);
+	}
 
+	if (bytes_read == -1)
+		error_handler(98, "Error: Can't read from file %s\n", 's', argv[1]);
+	if (close(fd_s) == -1)
+		error_handler(100, "Error: Can't close fd %d\n", 'd', fd_s);
 	if (close(fd_d) == -1)
 		error_handler(100, "Error: Can't close fd %d\n", 'd', fd_d);
 
