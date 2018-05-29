@@ -29,6 +29,6 @@ void insertion_sort_list(listint_t **list)
 				key->prev->next = key;
 			print_list(*list);
 		}
-		key= key->next;
+		key = key->next;
 	}
 }
