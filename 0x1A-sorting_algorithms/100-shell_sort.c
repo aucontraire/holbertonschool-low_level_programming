@@ -24,13 +24,15 @@ void swap(int *array, int greater, int lesser)
 
 void shell_sort(int *array, size_t size)
 {
-	size_t gap = 1, first = 0, second = 0, i = 0, j = 0;
+	size_t gap = 0, first = 0, second = 0, i = 0, j = 0;
 	int swaps = 0;
 
 	if (array == NULL)
 		return;
 
-	gap = gap * 3 + 1;
+	for (gap = 0; gap < size; gap = (gap * 3) + 1)
+		;
+	gap = (gap - 1) / 3;
 	while (gap >= 1)
 	{
 		for (first = 0; first + gap < size; first++)
