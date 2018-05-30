@@ -55,7 +55,7 @@ void shell_sort(int *array, size_t size)
 	for (i = 0; i < size - 1; i++)
 	{
 		j = i;
-		while (array[j] > array[j + 1] && j > 0)
+		while (array[j] > array[j + 1])
 		{
 			swap(array, j, j + 1);
 			j--;
