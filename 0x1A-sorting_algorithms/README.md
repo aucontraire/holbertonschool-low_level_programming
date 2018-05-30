@@ -4,3 +4,4 @@
 * 2-selection_sort.c, 2-O: function that sorts an array of integers in ascending order using the Selection sort algorithm
 * 3-quick_sort.c, 3-O:  function that sorts an array of integers in ascending order using the Quick sort algorithm
 * 100-shell_sort.c: function that sorts an array of integers in ascending order using the Shell sort algorithm
+* 102-counting_sort.c, 102-O: function that sorts an array of integers in ascending order using the Counting sort algorithm
