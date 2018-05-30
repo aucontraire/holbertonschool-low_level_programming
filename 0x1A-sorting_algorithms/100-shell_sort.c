@@ -1,6 +1,22 @@
 #include "sort.h"
 
 /**
+ * swap - swap array elements
+ * @array: array
+ * @greater: index of greater int
+ * @lesser: index of lesser int
+ */
+
+void swap(int *array, int greater, int lesser)
+{
+	int temp = array[greater];
+
+	array[greater] = array[lesser];
+	array[lesser] = temp;
+}
+
+
+/**
  * shell_sort - sort array with shell sort algorithm
  * @array: array
  * @size: size of array
@@ -9,7 +25,10 @@
 void shell_sort(int *array, size_t size)
 {
 	size_t gap = 1, first = 0, second = 0, i = 0, j = 0;
-	int temp = 0, swaps = 0;
+	int swaps = 0;
+
+	if (array == NULL)
+		return;
 
 	gap = gap * 3 + 1;
 	while (gap >= 1)
@@ -19,9 +38,7 @@ void shell_sort(int *array, size_t size)
 			second = first + gap;
 			if (array[first] > array[second])
 			{
-				temp = array[first];
-				array[first] = array[second];
-				array[second] = temp;
+				swap(array, first, second);
 				swaps++;
 			}
 		}
@@ -40,9 +57,7 @@ void shell_sort(int *array, size_t size)
 		j = i;
 		while (array[j] > array[j + 1] && j > 0)
 		{
-			temp = array[j];
-			array[j] = array[j + 1];
-			array[j + 1] = temp;
+			swap(array, j, j + 1);
 			j--;
 		}
 	}
