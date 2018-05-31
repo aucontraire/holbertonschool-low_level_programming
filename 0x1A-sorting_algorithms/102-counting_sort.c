@@ -22,6 +22,34 @@ int find_max(int *array, size_t size)
 }
 
 /**
+ * initialize_array - fill array with 0s
+ * @counts: array
+ * @max: highest value to iterate to
+ */
+
+void initialize_array(int *counts, int max)
+{
+	int j = 0;
+
+	for (j = 0; j <= max; j++)
+		counts[j] = 0;
+}
+
+/**
+ * free_arrays - free arrays that are not needed
+ * @counts: array of frequencies
+ * @sums: array of cummulative sums
+ * @sorted: sorted array
+ */
+
+void free_arrays(int *counts, int *sums, int *sorted)
+{
+	free(counts);
+	free(sums);
+	free(sorted);
+}
+
+/**
  * counting_sort - sort array using counting sort algorithm
  * @array: array
  * @size: size of array
@@ -30,8 +58,7 @@ int find_max(int *array, size_t size)
 void counting_sort(int *array, size_t size)
 {
 	size_t i = 0;
-	int j = 0, max = 0, tally = 0;
-	int *counts, *sums, *sorted;
+	int j = 0, max = 0, tally = 0, *counts, *sums, *sorted;
 
 	if (array == NULL || size < 2)
 		return;
@@ -52,8 +79,7 @@ void counting_sort(int *array, size_t size)
 		free(sums);
 		return;
 	}
-	for (j = 0; j <= max; j++)
-		counts[j] = 0;
+	initialize_array(counts, max);
 	for (i = 0; i < size; i++)
 		counts[array[i]]++;
 	for (j = 0; j <= max; j++)
@@ -63,10 +89,11 @@ void counting_sort(int *array, size_t size)
 	}
 	print_array(sums, (size_t)max + 1);
 	for (j = (int)size - 1; j >= 0; j--)
+	{
 		sorted[sums[array[j]] - 1] = array[j];
+		sums[array[j]]--;
+	}
 	for (j = 0; j < (int)size; j++)
 		array[j] = sorted[j];
-	free(counts);
-	free(sums);
-	free(sorted);
+	free_arrays(counts, sums, sorted);
 }
