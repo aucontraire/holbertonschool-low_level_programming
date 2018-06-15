@@ -10,16 +10,6 @@ def island_perimeter(grid):
         perimeter number of cells the island is surrounded by water
     """
     perimeter = 0
-    if not grid:
-        return perimeter
-    if type(grid) is not list:
-        return perimeter
-    rows = len(grid)
-    if rows < 3:
-        return perimeter
-    columns = len(grid[0])
-    if columns < 3:
-        return perimeter
 
     for r in range(1, rows - 1):
         for c in range(1, columns - 1):
@@ -34,13 +24,3 @@ def island_perimeter(grid):
                     perimeter += 1
 
     return perimeter
-
-if __name__ == "__main__":
-    grid = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0]
-    ]
-    print(island_perimeter(grid))
