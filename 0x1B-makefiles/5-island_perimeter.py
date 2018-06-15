@@ -49,13 +49,3 @@ def island_perimeter(grid):
             if grid[r][c] == 1:
                 perimeter += check_peri(r, c, grid)
     return perimeter
-
-if __name__ == "__main__":
-    grid = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 1, 1, 1, 1, 0],
-        [0, 1, 1, 1, 1, 0],
-        [0, 1, 1, 1, 1, 0],
-        [0, 0, 0, 0, 0, 0]
-    ]
-    print(island_perimeter(grid))
