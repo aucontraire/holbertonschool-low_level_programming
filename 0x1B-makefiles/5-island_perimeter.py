@@ -12,8 +12,6 @@ def try_the_edges(r, c, grid):
         count of zeroes or sides cell is surrounded by water
     """
     count = 0
-    print('({},{})'.format(r, c))
-
     if r == 0:
         count += 1
     if r == len(grid) - 1:
