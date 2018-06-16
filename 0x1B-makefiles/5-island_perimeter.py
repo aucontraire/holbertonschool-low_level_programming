@@ -12,24 +12,15 @@ def try_the_edges(r, c, grid):
         count of zeroes or sides cell is surrounded by water
     """
     count = 0
-    if r == 0:
+    if r == 0 or grid[r - 1][c] == 0:
         count += 1
-    if r == len(grid) - 1:
+    if r == len(grid) - 1 or grid[r + 1][c] == 0:
         count += 1
-    if c == 0:
+    if c == 0 or grid[r][c - 1] == 0:
         count += 1
-    if c == len(grid[0]) - 1:
+    if c == len(grid[0]) - 1 or grid[r][c + 1] == 0:
         count += 1
 
-    if r > 0 and r < len(grid) - 1 and c > 0 and c < len(grid[0]) - 1:
-        if grid[r - 1][c] == 0:
-            count += 1
-        if grid[r][c + 1] == 0:
-            count += 1
-        if grid[r + 1][c] == 0:
-            count += 1
-        if grid[r][c - 1] == 0:
-            count += 1
     return count
 
 
@@ -57,3 +48,18 @@ def island_perimeter(grid):
                 perimeter += try_the_edges(r, c, grid)
 
     return perimeter
+
+if __name__ == "__main__":
+    grid = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0]
+    ]
+
+    grid = [
+        [1, 1],
+        [1, 1]
+    ]
+    print(island_perimeter(grid))
