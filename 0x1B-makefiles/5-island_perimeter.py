@@ -57,20 +57,3 @@ def island_perimeter(grid):
                 perimeter += try_the_edges(r, c, grid)
 
     return perimeter
-
-if __name__ == "__main__":
-
-    grid = [
-        [1, 1],
-        [1, 1]
-    ]
-
-    grid = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0]
-    ]
-
-    print(island_perimeter(grid))
