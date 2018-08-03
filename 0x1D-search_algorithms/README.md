@@ -5,3 +5,4 @@
 * 2-O, 3-O, 4-O, 5-O, 6-O: time and space complexity
 * 100-jump.c: function that searches for a value in a sorted array of integers using the Jump search algorithm
 * 101-O: time complexity for jump search
+* 102-interpolation.c: function that searches for a value in a sorted array of integers using the Interpolation search algorithm
