@@ -1,12 +1,10 @@
 #include "holberton.h"
 #include <stdio.h>
-
 /**
  * main - take the fizz-buzz challenge
  *
  * Return: Always 0
  */
-
 int main(void)
 {
 	int n;
@@ -26,6 +24,5 @@ int main(void)
 			printf("%d ", n);
 	}
 	printf("\n");
-
 	return (0);
 }
